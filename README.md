@@ -6,5 +6,10 @@
 1. NGINX
 2. PostgreSQL
 3. PHP Module
-langkah"
+4. OS Ubuntu 22.04
+## Langkah-langkah Install NextCloud on Ubuntu
+### Step 1 : Download NectCloud on Ubuntu 22.04
+wget https://download.nextcloud.com/server/releases/nextcloud-24.0.0.zip
+Install unzip utility
+sudo apt install unzip
 cara penggunaan

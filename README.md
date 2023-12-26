@@ -4,6 +4,7 @@
   Berbeda dengan layanan seperti Dropbox, arsitektur perangkat lunak yang mendukung untuk menambah, peningkatan, dan penggantian komponen seperti penambahan fungsionalitas ke peladen dalam bentuk aplikasi memungkinkan pengguna untuk memiliki kontrol penuh atas data mereka.
 ## Service yang Perlu Diinstall
 1. NGINX
-2. 
+2. PostgreSQL
+3. PHP Module
 langkah"
 cara penggunaan

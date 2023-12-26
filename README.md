@@ -9,7 +9,39 @@
 4. OS Ubuntu 22.04
 ## Langkah-langkah Install NextCloud on Ubuntu
 ### Step 1 : Download NectCloud on Ubuntu 22.04
+```
 wget https://download.nextcloud.com/server/releases/nextcloud-24.0.0.zip
+```
 Install unzip utility
+```
 sudo apt install unzip
-cara penggunaan
+```
+Buat direktori /var/www/ dan extrack archive file
+```
+sudo mkdir -p /var/www/
+sudo unzip nextcloud-24.0.0.zip -d /var/www/
+```
+### Atep 2: Buat Database dan User untuk Nextcloud di PostgreSQL
+Nextcloud compatible menggunakan PostgreSQL,MariaDB/MySQL, dan SQLite. Nextcloud berjalan lebih cepat menggunakan PostgreSQL, jadi disini saya menggunakan PostgreSQL.
+```
+sudo apt install -y postgresql postgresql-contrib
+```
+Masuk ke PostgreSQL sebagai postgres user
+```
+sudo -u postgres psql
+```
+Buat database Nextcloud
+```
+CREATE DATABASE nextcloud TEMPLATE template0 ENCODING 'UNICODE';
+```
+Buat user dan set password
+```
+CREATE USER nextclouduser WITH PASSWORD 'nextclouduser_password';
+```
+Beri ijin ke database user
+```
+ALTER DATABASE nextcloud OWNER TO nextclouduser;
+GRANT ALL PRIVILEGES ON DATABASE nextcloud TO nextclouduser;
+```
+
+## cara penggunaan

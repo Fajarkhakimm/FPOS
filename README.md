@@ -253,3 +253,11 @@ Lalu isi seperti dibawah ini untuk passwar menggunakan passwaord user database y
 Maka akan muncul tampilan seperti ini jika setelah selesai
 ![image](https://github.com/Fajarkhakimm/FPOS/assets/147434983/86e317c0-27c6-425c-8f6f-a1aeb876257b)
 
+### Step 8 : Add User Nextcloud
+1. login nextcloud sebagai admin
+2. klik logo kanan atas, masuk ke menu user
+   ![image](https://github.com/Fajarkhakimm/FPOS/assets/147434983/b53868e6-cd5c-47ea-94f3-d5afb6c767b3)
+
+3. klik ```+ new user``` kemuadian masukkan user baru
+4. ![image](https://github.com/Fajarkhakimm/FPOS/assets/147434983/52147a92-5b85-4f00-b4f5-578b1ec310c6)
+

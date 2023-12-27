@@ -8,6 +8,7 @@
 3. PHP Module
 4. Cockpit remote server
 5. OS Ubuntu 22.04
+   
 ## Langkah-langkah Install NextCloud on Ubuntu
 ### Step 1 : Download NectCloud on Ubuntu 22.04
 ```
@@ -189,17 +190,38 @@ sudo apt install imagemagick php-imagick php8.1-common php8.1-pgsql php8.1-fpm p
 ### Step 5: Buat Domain dan Setting Cloudflare
 Beli domain di website yang terpercaya
 ![image](https://github.com/Fajarkhakimm/FPOS/assets/147434983/13e13162-b84c-4787-8cf7-2a48b220e323)
+
 Buat akun cloudflare, lalu masuk ke menu add site
+
 ![image](https://github.com/Fajarkhakimm/FPOS/assets/147434983/281108ff-8ad8-488b-87a8-9d5ecf8a4f48)
+
 Masukkan domain yang sudah dibeli
+
 ![image](https://github.com/Fajarkhakimm/FPOS/assets/147434983/a2579b6b-5848-4d24-9587-9aeb60173118)
+
 Lalu copy Name server cloudflare ke website hosting yang kita beli, tunggu 24 untuk pengaktivan.
+
 ![image](https://github.com/Fajarkhakimm/FPOS/assets/147434983/a7b1b06c-2b92-43e7-b403-3d0c4b6ae064)
+
 Masuk kemenu Zero trust lalu pilih tunnel
+
 ![image](https://github.com/Fajarkhakimm/FPOS/assets/147434983/24cf1d80-0924-4f04-804a-4f76b3cc1e06)
+
 Masukkan nama tunnel 
+
 ![image](https://github.com/Fajarkhakimm/FPOS/assets/147434983/b3976d28-36bc-4f77-a6e7-3f3c398068e1)
 
+Lalu pilih os debian dan install konector cloudflare di ubuntu
+
+![image](https://github.com/Fajarkhakimm/FPOS/assets/147434983/8b6b2e6e-c2d9-410d-b1b0-04349483039f)
+
+kemudian buat publick hostname baru
+
+![image](https://github.com/Fajarkhakimm/FPOS/assets/147434983/0098dab5-3a11-4f0c-b891-9824fc1bd91a)
+
+buat subdomain yang sama seperti file nextcloud.conf dan masukkan port yang sama juga
+
+![image](https://github.com/Fajarkhakimm/FPOS/assets/147434983/a4fa6d2d-1ca4-43b5-beab-598e1c84b56e)
 
 
 ### Step 6: Enable HTTPS
@@ -211,4 +233,23 @@ dan juga port 443
 ```
 sudo iptables -I INPUT -p tcp --dport 443 -j ACCEPT
 ```
-## cara penggunaan
+
+### Step 7 : Setting Nextcloud di Web Browser
+Buat folder untuk penyimapan file nextcloud
+```
+sudo mkdir /var/www/nextcloud-data
+```
+Beri ijin agar bisa dibaca nginx user
+```
+sudo chown www-data:www-data /var/www/nextcloud-data -R
+```
+kemudian login ke nexcloud menggunakan browser di windows dengan link yang sudah dibuat
+```
+cloud.doom.my.id
+```
+Lalu isi seperti dibawah ini untuk passwar menggunakan passwaord user database yang sudah kita buat di awal, dan port 5432 adalah port default dari PostgreSQL. untuk username dan pasword bagian atas bisa diisi bebas( ini digunakan untuk login sebagai admin nextcloud)
+![image](https://github.com/Fajarkhakimm/FPOS/assets/147434983/2c30b121-c192-4602-9838-799330892a01)
+
+Maka akan muncul tampilan seperti ini jika setelah selesai
+![image](https://github.com/Fajarkhakimm/FPOS/assets/147434983/86e317c0-27c6-425c-8f6f-a1aeb876257b)
+

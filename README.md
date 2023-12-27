@@ -6,7 +6,8 @@
 1. NGINX
 2. PostgreSQL
 3. PHP Module
-4. OS Ubuntu 22.04
+4. Cockpit remote server
+5. OS Ubuntu 22.04
 ## Langkah-langkah Install NextCloud on Ubuntu
 ### Step 1 : Download NectCloud on Ubuntu 22.04
 ```
@@ -196,6 +197,8 @@ Lalu copy Name server cloudflare ke website hosting yang kita beli, tunggu 24 un
 ![image](https://github.com/Fajarkhakimm/FPOS/assets/147434983/a7b1b06c-2b92-43e7-b403-3d0c4b6ae064)
 Masuk kemenu Zero trust lalu pilih tunnel
 ![image](https://github.com/Fajarkhakimm/FPOS/assets/147434983/24cf1d80-0924-4f04-804a-4f76b3cc1e06)
+Masukkan nama tunnel 
+![image](https://github.com/Fajarkhakimm/FPOS/assets/147434983/b3976d28-36bc-4f77-a6e7-3f3c398068e1)
 
 
 

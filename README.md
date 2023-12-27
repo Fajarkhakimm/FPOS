@@ -53,7 +53,7 @@ Buat file nextcloud.conf di directory /etc/nginx/conf.d/
 ```
 sudo nano /etc/nginx/conf.d/nextcloud.conf
 ```
-Lalu copy paste file dibawah ini
+Lalu masukkan file dibawah ini
 ```
 server {
     listen 443;
@@ -168,5 +168,44 @@ server {
    }
 }
 ```
+Ubah kepemilikan direktori ini ke ```www-data``` jadi web server nginx dapat membaca ke direktori ini
+```
+sudo chown www-data:www-data /var/www/nextcloud/ -R
+```
+Test Nginx configuration
+```
+sudo nginx -t
+```
+Jika sukses reload nginx
+```
+sudo systemctl reload nginx
+```
+### Step 4: Install dan Enable PHP module
+Install paket PHP
+```
+sudo apt install imagemagick php-imagick php8.1-common php8.1-pgsql php8.1-fpm php8.1-gd php8.1-curl php8.1-imagick php8.1-zip php8.1-xml php8.1-mbstring php8.1-bz2 php8.1-intl php8.1-bcmath php8.1-gmp
+```
+### Step 5: Buat Domain dan Setting Cloudflare
+Beli domain di website yang terpercaya
+![image](https://github.com/Fajarkhakimm/FPOS/assets/147434983/13e13162-b84c-4787-8cf7-2a48b220e323)
+Buat akun cloudflare, lalu masuk ke menu add site
+![image](https://github.com/Fajarkhakimm/FPOS/assets/147434983/281108ff-8ad8-488b-87a8-9d5ecf8a4f48)
+Masukkan domain yang sudah dibeli
+![image](https://github.com/Fajarkhakimm/FPOS/assets/147434983/a2579b6b-5848-4d24-9587-9aeb60173118)
+Lalu copy Name server cloudflare ke website hosting yang kita beli, tunggu 24 untuk pengaktivan.
+![image](https://github.com/Fajarkhakimm/FPOS/assets/147434983/a7b1b06c-2b92-43e7-b403-3d0c4b6ae064)
+Masuk kemenu Zero trust lalu pilih tunnel
+![image](https://github.com/Fajarkhakimm/FPOS/assets/147434983/24cf1d80-0924-4f04-804a-4f76b3cc1e06)
 
+
+
+### Step 6: Enable HTTPS
+jika website tidak bisa muncul maka kamu butuh membuka port 80 di firewall
+```
+sudo iptables -I INPUT -p tcp --dport 80 -j ACCEPT
+```
+dan juga port 443
+```
+sudo iptables -I INPUT -p tcp --dport 443 -j ACCEPT
+```
 ## cara penggunaan
